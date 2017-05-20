@@ -8,8 +8,8 @@ import (
 	"strconv"
 	"fmt"
 	"time"
-	"algorithums/qsort"
-	"algorithums/bubblesort"
+	"algorithms/qsort"
+	"algorithms/bubblesort"
 )
 
 var infile *string = flag.String("i", "infile", "File contains values for sorting")
@@ -89,7 +89,7 @@ func main() {
 			case "qsort":
 				qsort.QuickSort(values)
 			case "bubblesort":
-				bubblesort.BUbbleSort(values)
+				bubblesort.BubbleSort(values)
 			default:
 				fmt.Println("Sorting algorithm", *algorithm, "is either unknown or unsuportted")
 		}
