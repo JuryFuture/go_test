@@ -48,7 +48,7 @@ func (m *MusicManager) Add(music *MusicEntry) {
 	m.musics = append(m.musics, *music)
 }
 
-func (m *MusicManager) remove(index int) *MusicEntry {
+func (m *MusicManager) Remove(index int) *MusicEntry {
 	if index < 0 || index > m.Len() {
 		return nil
 	}
