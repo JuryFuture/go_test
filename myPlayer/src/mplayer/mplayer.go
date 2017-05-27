@@ -11,7 +11,7 @@ import(
 	"mp"
 )
 
-var lib = new(library.MusicManager)
+var lib *library.MusicManager
 var id int = 1
 var ctrl, signal chan int
 
@@ -59,7 +59,8 @@ func handlePlayCommands(tokens []string) {
 
 func main() {
 	fmt.Println("Enter following commands to control the player:\nlib list -- View the existing music lib\nlib add <name><artist><source><type> -- Add a music to the music lib\nlib remove <name> -- Remove the specified music from the lib\nplay <name> -- Play the specified music")
-
+	
+	lib = library.NewMusicManager()
 	r := bufio.NewReader(os.Stdin)
 
 	for {
