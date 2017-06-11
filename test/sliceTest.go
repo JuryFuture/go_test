@@ -1,7 +1,7 @@
 package main
 import "fmt"
 func main(){
-	arr := []int{0,1,2,3,4,5,6,7,8,9}
+	arr := [10]int{0,1,2,3,4,5,6,7,8,9}
 	//通过现有数组创建
 	var sl1 []int = arr[:5]
 	//直接创建
