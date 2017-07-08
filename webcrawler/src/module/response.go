@@ -24,3 +24,8 @@ func (res *Response) HeepRes() *http.Response {
 func (res *Response) Depth() int {
 	return res.depth
 }
+
+// 用于判断响应是否有效
+func (res *Response) Valid() bool {
+	return res.httpRes != nil && res.httpRes.Body != nil
+}
