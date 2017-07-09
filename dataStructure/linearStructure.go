@@ -57,10 +57,7 @@ func (li *ArrayList) Get(index int) interface{} {
 
 //改
 func (li *ArrayList) Set(index int, o interface{}) {
-	if index < DEFAULT_CAPACITY && index > -1 {
-		if li.Get(index) == nil {
-			li.size ++
-		}
+	if index < li.size && index > -1 {
 		li.data[index] = o
 	} else {
 		panic("out of index")
