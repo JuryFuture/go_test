@@ -14,13 +14,13 @@ type ArrayList struct {
 
 //初始化
 func NewArrayList() *ArrayList {
-	li := &List{[DEFAULT_CAPACITY]interface{}{},0}
+	li := &ArrayList{[DEFAULT_CAPACITY]interface{}{},0}
 	return li
 }
 
 //增
 func (li *ArrayList) Add(index int, o interface{}) {
-	if li.size + 1 < DEFAULT_CAPACITY && index > -1 {
+	if li.size + 1 <= DEFAULT_CAPACITY && index > -1 {
 		if li.Get(index) != nil {
 			for i := DEFAULT_CAPACITY - 1; i > index; i-- {
 				li.data[i] = li.data[i-1]
@@ -34,7 +34,7 @@ func (li *ArrayList) Add(index int, o interface{}) {
 }
 
 //删
-func (li *List) Delete(index int) interface{} {
+func (li *ArrayList) Delete(index int) interface{} {
 	o := li.Get(index)
 
 	for i:= index; i < DEFAULT_CAPACITY -1; i++ {
@@ -47,7 +47,7 @@ func (li *List) Delete(index int) interface{} {
 }
 
 //查
-func (li *List) Get(index int) interface{} {
+func (li *ArrayList) Get(index int) interface{} {
 	if index < DEFAULT_CAPACITY && index > -1 {
 		return li.data[index]
 	} else {
@@ -56,7 +56,7 @@ func (li *List) Get(index int) interface{} {
 }
 
 //改
-func (li *List) Set(index int, o interface{}) {
+func (li *ArrayList) Set(index int, o interface{}) {
 	if index < DEFAULT_CAPACITY && index > -1 {
 		if li.Get(index) == nil {
 			li.size ++
@@ -68,7 +68,7 @@ func (li *List) Set(index int, o interface{}) {
 }
 
 //计算长度
-func (li *List) Size() int {
+func (li *ArrayList) Size() int {
 	return li.size
 }
 
