@@ -24,3 +24,8 @@ func (req *Request) HttpReq() (*http.Request) {
 func (req *Request) Depth() (int) {
 	return req.depth
 }
+
+// 用于判断请求是否有效
+func (req *Request) Valid() bool {
+	return req.httpReq != nil  &&  req.httpReq.URL != nil
+}
