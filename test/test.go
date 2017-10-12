@@ -6,5 +6,7 @@ type A struct{
 
 func main() {
 	a := &A{1}
-	fmt.Println(a.a)
+	b := a
+	a = &A{2}
+	fmt.Println(b)
 }
